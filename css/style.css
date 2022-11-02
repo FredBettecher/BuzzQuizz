@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+
+    /*background color */
+    --background-header: #EC362D;
+
+
+    /*font color */
+    --font-color-header:#FFFFFF;
+}
+
+
+
+header{
+    background-color: var(--background-header);
+    color: var(--font-color-header);
+    width: 100vw; /* 100vw é para se adaptar ao tamanho da tela...irá mostrar toda a largura da tela */
+    height: 69px;
+}
