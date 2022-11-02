@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /*background color */
+    --background-header-buttom: #EC362D;
+    --background-caixa-perguntas: #FFFFFF;
+    --background-main:#FAFAFA ;
+
+    /*color border*/
+    --border-input:#D1D1D1;
+
+    /*font color */
+    --font-color-header: #FFFFFF;
+    --font-color-subtitulo: #000000;
+    --placeholder-color:#BABABA;
+    --font-buttom-color:#FFF5F4;
+
+
+}
+
+main .h-tela3 {
+    background-color: var(--background-main);
+    font-family: "Roboto";
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+
+    font-size: 62.5%;
+}
+
+
+
+section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-header-buttom);
+    color: var(--font-color-header);
+    width: 100vw;/* 100vw é para se adaptar ao tamanho da tela...irá mostrar toda a largura da tela */
+    height: 6.9rem;
+}
+
+header h1 {
+    font-size: 4.3rem;
+    font-weight: 700;
+}
+
+.h-tela3 h2 {
+    color: var(--font-color-subtitulo);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 3.7rem;
+}
+
+
+.h-tela3 ul {
+    background-color: var(--background-caixa-perguntas);
+    width: 37.5rem;
+    height: 25.6rem;
+    margin-top: 2.9rem;
+}
+
+.h-tela3 li {
+    display: flex;
+    flex-direction: column;  
+}
+
+input{
+    width: 34.1rem;
+    height: 4.6rem;
+    margin: 0 1.8rem 0.9rem 1.6rem ;
+    border: 0.1rem solid var(--border-input);
+    border-radius: 0.5rem;;
+}
+
+::placeholder{
+    color: var(--placeholder-color);
+    font-size: 1.9rem;
+    font-style: italic;
+    line-height: 2.2rem;
+    letter-spacing: 0em;
+    padding-left: 1.4rem;
+    padding-top: 1.3rem;
+}
+
+.criar-pergunta{
+    background-color: var(--background-header-buttom);
+    width: 32.4rem;
+    height: 5.4rem;
+    color: var(--font-buttom-color);
+    font-size: 1.8rem;   
+    line-height: 2.1rem;
+    letter-spacing: 0em;
+    text-align: center;
+    border-radius: 1.5rem;
+}
