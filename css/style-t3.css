@@ -27,7 +27,7 @@ main .h-tela3 {
     justify-content: center;
     font-weight: 400;
 
-    font-size: 62.5%;
+
 }
 
 
@@ -50,26 +50,26 @@ header {
 }
 
 header h1 {
-    font-size: 4.3rem;
+    font-size: 43px;
     font-weight: 700;
 }
 
 .h-tela3 h2 {
     color: var(--font-color-subtitulo);
-    font-size: 2rem;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 2.3rem;
+    line-height: 23px;
     letter-spacing: 0em;
     text-align: center;
-    margin-top: 3.7rem;
+    margin-top: 37px;
 }
 
 
 .h-tela3 ul {
     background-color: var(--background-caixa-perguntas);
-    width: 37.5rem;
-    height: 25.6rem;
-    margin-top: 2.9rem;
+    width: 375px;
+    height: 256px;
+    margin-top: 29px;
 }
 
 .h-tela3 li {
@@ -78,31 +78,32 @@ header h1 {
 }
 
 input{
-    width: 34.1rem;
-    height: 4.6rem;
-    margin: 0 1.8rem 0.9rem 1.6rem ;
-    border: 0.1rem solid var(--border-input);
-    border-radius: 0.5rem;;
+    width: 341px;
+    height: 46px;
+    margin: 0 18px 9px 16px ;
+    border: 1px solid var(--border-input);
+    border-radius: 5px;;
 }
 
 ::placeholder{
     color: var(--placeholder-color);
-    font-size: 1.9rem;
+    font-size: 19px;
     font-style: italic;
-    line-height: 2.2rem;
+    line-height: 22px;
     letter-spacing: 0em;
-    padding-left: 1.4rem;
-    padding-top: 1.3rem;
+    padding-left: 14px;
+    padding-top: 13px;
 }
 
 .criar-pergunta{
     background-color: var(--background-header-buttom);
-    width: 32.4rem;
-    height: 5.4rem;
+    width: 324px;
+    height: 54px;
     color: var(--font-buttom-color);
-    font-size: 1.8rem;   
-    line-height: 2.1rem;
+    font-size: 18px;   
+    line-height: 21px;
     letter-spacing: 0em;
     text-align: center;
-    border-radius: 1.5rem;
+    border-radius: 15px;
+    border: none;
 }
