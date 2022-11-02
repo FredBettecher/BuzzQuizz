@@ -67,28 +67,28 @@
 
 
 <!-- inicio tela 3 -->
-    <main class="h-tela3 ocultar">
+<main class="h-tela3 ocultar">
 
-        <section class="h-login">
-            <h2> Comece pelo começo </h2>
+    <section class="h-login">
+        <h2> Comece pelo começo </h2>
 
-            <ul>
-                <li>
-                    <form action="">
-                    <input class="titulo" type="text" minlength="20" maxlength="65"  placeholder="Titulo do seu quizz" required title="20 to 60 characters">
-                    <input class="url"type="url" placeholder="URL da imagem do seu quizz">
-                    <input class="qta-perguntas" type="number" min="3" placeholder="Quantidade de perguntas do quizz">
-                    <input class="qta-niveis" type="number" min="2" placeholder="Quantidade de níveis do quis">
-                </form>
-                </li>
-            </ul>
+        <ul>
+            <li>
+                <form action="">
+                <input class="titulo" type="text" minlength="20" maxlength="65"  placeholder="Titulo do seu quizz" required title="20 to 60 characters">
+                <input class="url"type="url" placeholder="URL da imagem do seu quizz" required title=" includes URL">
+                <input class="qta-perguntas" type="number" min="3" placeholder="Quantidade de perguntas do quizz"required title=" minimo number 3 ">
+                <input class="qta-niveis" type="number" min="2" placeholder="Quantidade de níveis do quis" required title=" minimo number 2 ">
+                <button class="criar-pergunta" onclick="receberValoresT3()"> Prosseguir pra criar perguntas </button>
+            </form>
+            </li> 
+        </ul>
 
-            <button class="criar-pergunta" onclick="receberValoresT3()"> Prosseguir pra criar perguntas </button>
+    </section>
 
-        </section> 
-
-    </main>
+</main>
 <!-- fim tela 3 -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script/script.js"></script>

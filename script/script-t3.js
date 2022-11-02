@@ -11,7 +11,10 @@ login = {titulo:titulo ,
     qtaPerguntas:qtaPerguntas,
     qtaNiveis:qtaNiveis}
 
-    checkUrl(url)
+    if(19 < titulo.length && qtaPerguntas > 2 && qtaNiveis >1 ){
+        console.log(titulo.length)
+        log()
+       }
 }
 
 function log(){
@@ -19,11 +22,12 @@ console.log(login)
 alert('oi')
 }
 
-function checkUrl(url) {
+/*function checkUrl(url) {
     try {
+        
      let ur = new URL(url)
-     console.log("Valid URL!")
      return proximaTela()
+     console.log("Valid URL!")
     } 
     
     
@@ -31,16 +35,6 @@ function checkUrl(url) {
        console.log("Invalid URL!")
    }
 
-   
  }
 
-
- function proximaTela() {
-    
-
-    if(19 < titulo.length && qtaPerguntas > 2 && qtaNiveis >1 ){
-        console.log(titulo.length)
-        log()
-       }
-
- }
+*/
