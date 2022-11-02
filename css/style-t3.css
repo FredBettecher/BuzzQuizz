@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+.body{
+height: 100%;
+width: 100%;
+background: #E5E5E5;   
+}
+
 html {
     /*background color */
     --background-header-buttom: #EC362D;
@@ -46,7 +52,9 @@ header {
     background-color: var(--background-header-buttom);
     color: var(--font-color-header);
     width: 100vw;/* 100vw é para se adaptar ao tamanho da tela...irá mostrar toda a largura da tela */
-    height: 6.9rem;
+    height: 69px;
+    background: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 header h1 {
