@@ -1,4 +1,19 @@
+
 ObterQuizzes()
+
+//function CriarQuizz() {
+
+//}
+
+
+// function SelecionarQuiz() {
+
+//     let div = document.getElementById('${item.id}');
+//     div.classList.add("escondido");
+
+//     console.log('${item.id}')
+
+// }
 
 function ObterQuizzes() {
 
@@ -16,23 +31,31 @@ function ObterQuizzes() {
     }
 }
 
-// // a função renderizarLista atualiza as mensagens na tela a cada 3 segundos
+// a função renderizarLista atualiza os quizzes na tela
+//Na Tela 1: Lista de Quizzes, você pode comparar o id dos quizzes vindo do servidor
+//com esses ids armazenados na criação dos quizzes para verificar se um determinado quizz 
+// foi criado pelo usuário em questão
 function renderizarTodosQuizzes(Quizzes) {
-
     const lista = document.getElementById('TodosQuizzes');
+    // id criado na tela 3
+    //if (item.id === " ") {
 
     lista.innerHTML = '';
-    
+
     for (let i = 0; i < Quizzes.length; i++) {
 
         let item = Quizzes[i];
-        lista.innerHTML += `
-            <li class="tamanho-imagem">
-                <div SelecionarQuiz() class="li-gradiente" style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
-                height: 181px;">
-                    ${item.title}
-                </div>
-            </li>
-        `;
+        lista.innerHTML +=
+            `
+                    <div id=${item.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                        style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
+                        rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
+                        height: 181px;">
+                        ${item.title}
+                    </div>
+                `;
     }
+
+    //}
+
 }
