@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-t1.css">
     <link rel="stylesheet" href="./css/style-t2.css">
     <link rel="stylesheet" href="./css/style-t3.css">
     <link rel="icon" type="page-logo" href="./imagens/buzzquizz.png">
@@ -18,18 +19,62 @@
         <h1>BuzzQuizz</h1>
     </header>
 
-<!-- inicio tela 2 -->
+    <!-- inicio tela 1 -->
+    <div class="e-tela1">
+
+        <div class="criar-quiz">
+            <input type="text" placeholder="Você não criou nenhum quizz ainda :(" />
+            <button onclick="CriarQuizz()">Criar Quizz</button>
+        </div>
+        <h2>Seus Quizzes </h2>
+        <div>
+            <ul class="Quizzes" id="SeusQuizzes">
+                <li class="tamanho-imagem">
+                    <div class="li-gradiente" style="background-image:
+                        linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+                        url('./imagens/Rectangle\ 34.png');">
+                    </div>
+                <li class="tamanho-imagem">
+                    <div class="li-gradiente" style="background-image:
+                            linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+                            url('./imagens/Rectangle\ 34.png');">
+                    </div>
+                </li>
+                <li class="tamanho-imagem">
+                    <div class="li-gradiente" style="background-image:
+                            linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+                            url('./imagens/Rectangle\ 34.png');">
+                    </div>
+                </li>
+                </li>
+            </ul>
+        </div>
+        <h2>Todos os Quizzes </h2>
+        <div>
+            <ul class="Quizzes" id="TodosQuizzes">
+                <!-- <li>
+                    <div class="li-gradiente" style="background-image:
+                        linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+                        url('./imagens/Os-Simpsons-Star-Plus.jpg');">
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- inicio tela 2 -->
     <main class="f-tela2">
         <section class="f-quiz">
             
         </section>
     </main>
-<!-- fim tela 2 -->
+    <!-- fim tela 2 -->
 
 
 
 
-<!-- inicio tela 3 -->
+    <!-- inicio tela 3 -->
     <main class="h-tela3 ocultar">
 
         <section class="h-login">
@@ -37,23 +82,35 @@
 
             <ul>
                 <li>
-                    <input type="text" placeholder="Titulo do seu quizz">
-                    <input type="text" placeholder="URL da imagem do seu quizz">
-                    <input type="text" placeholder="Quantidade de perguntas do quizz">
-                    <input type="text" placeholder="Quantidade de níveis do quis">
+                    <form action="">
+                        <input class="titulo" type="text" minlength="20" maxlength="65"
+                            placeholder="Titulo do seu quizz" required title="20 to 60 characters">
+                        <input class="url" type="url" placeholder="URL da imagem do seu quizz" required
+                            title=" includes URL">
+                        <input class="qta-perguntas" type="number" min="3"
+                            placeholder="Quantidade de perguntas do quizz" required title=" minimo number 3 ">
+                        <input class="qta-niveis" type="number" min="2" placeholder="Quantidade de níveis do quis"
+                            required title=" minimo number 2 ">
+                        <button class="criar-pergunta" onclick="receberValoresT3()"> Prosseguir pra criar perguntas
+                        </button>
+                    </form>
                 </li>
             </ul>
-
-            <button class="criar-pergunta" onclick=""> Prosseguir pra criar perguntas </button>
 
         </section>
 
     </main>
-<!-- fim tela 3 -->
+    <!-- fim tela 3 -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script/script.js"></script>
+    <script src="./script/script-t1.js"></script>
+
     <script src="./script/script-t2.js"></script>
+
+    <script src="./script/script-t3.js"></script>
+
 </body>
 
 </html>
