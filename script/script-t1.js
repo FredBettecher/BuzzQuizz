@@ -55,10 +55,5 @@ function renderizarTodosQuizzes(Quizzes) {
                     </div>
                 `;
     }
-console.log(item)
     //}
-
-}
-function SelecionarQuiz(){
-    console.log(this.id)
 }
