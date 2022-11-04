@@ -21,21 +21,17 @@
     align-items: center;
 }
 
-svg:hover {
-    fill: red;
-}
+
 
 .icon-add {
     width: 31px;
     height: 30px;
-    color:#EC362D;
+    color: #EC362D;
     margin-left: 15px;
 }
 
-.criar-quiz input:focus { 
-    outline: none; 
-}
-.criar-quiz input::placeholder {
+
+.criar-quiz p {
     width: 250px;
     height: 107px;
     left: 595px;
@@ -112,8 +108,4 @@ svg:hover {
     justify-content: center;
     align-items: flex-end;
     color: #FFFFFF;
-}
-
-.escondido {
-    display: none;
 }
