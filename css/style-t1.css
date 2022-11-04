@@ -32,7 +32,9 @@ svg:hover {
     margin-left: 15px;
 }
 
-
+.criar-quiz input:focus { 
+    outline: none; 
+}
 .criar-quiz input::placeholder {
     width: 250px;
     height: 107px;
@@ -47,6 +49,7 @@ svg:hover {
     align-items: center;
     text-align: center;
     color: #B9B9B9;
+    border: none;
 }
 
 .criar-quiz button {

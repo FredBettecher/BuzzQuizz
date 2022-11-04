@@ -6,14 +6,14 @@ ObterQuizzes()
 //}
 
 
-// function SelecionarQuiz() {
-
+function SelecionarQuiz(Quizzes) {
+console.log(Quizzes.id)
 //     let div = document.getElementById('${item.id}');
 //     div.classList.add("escondido");
 
 //     console.log('${item.id}')
 
-// }
+ }
 
 function ObterQuizzes() {
 
@@ -47,15 +47,22 @@ function renderizarTodosQuizzes(Quizzes) {
         let item = Quizzes[i];
         lista.innerHTML +=
             `
-                    <div id=${item.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                    <div onclick="SelecionarQuiz(this)" id="${item.id}" class="gradiente tamanho-imagem" 
                         style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                         rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                         height: 181px;">
-                        ${item.title}
+                        ${item.title} 
                     </div>
                 `;
     }
 
     //}
-
 }
+// function SelecionarQuiz() {
+
+//     let div = document.getElementById('${item.id}');
+//     div.classList.add("escondido");
+
+//     console.log('${item.id}')
+
+// }
