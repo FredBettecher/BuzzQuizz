@@ -4,7 +4,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -21,6 +20,18 @@
     justify-content: center;
     align-items: center;
 }
+
+svg:hover {
+    fill: red;
+}
+
+.icon-add {
+    width: 31px;
+    height: 30px;
+    color:#EC362D;
+    margin-left: 15px;
+}
+
 
 .criar-quiz input::placeholder {
     width: 250px;
@@ -49,10 +60,7 @@
     border-radius: 50px;
 }
 
-.Quizzes {
-    margin-top: 13px;
-    width: 72%;
-}
+
 
 .e-tela1 h2 {
     margin-top: 48px;
@@ -65,22 +73,44 @@
     font-size: 20px;
     line-height: 23px;
     color: #000000;
-    align-items: flex-start
+    align-items: flex-start;
+    display: flex;
+    align-items: center;
 }
 
-.e-tela1 ul {
-    height: 375px;
+
+.e-tela1 .Quizzes {
+    width: 72%;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-    align-content: flex-start;
 }
 
-.e-tela1 li {
-    width: 340px;
-    height: 181px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(image.png);
+.tamanho-imagem {
+    width: 330px;
     border-radius: 5px;
+    /* margin-left: 15px; */
+    margin-top: 12px;
+}
+
+.gradiente {
+    width: 330px;
+    height: 181px;
+    background-size: cover;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #FFFFFF;
+}
+
+.escondido {
+    display: none;
 }
