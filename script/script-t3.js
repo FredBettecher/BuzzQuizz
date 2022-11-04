@@ -88,10 +88,10 @@ for(let i=1; i <= 1 /*parametroQuizz.qtaPerguntas*/; i++){
 ` 
 }
 
-paginaInicial =document.querySelectorAll('.aqui'){
+paginaInicial =document.querySelectorAll('.aqui')
 
 
-}
+
 
 
 
@@ -103,10 +103,10 @@ paginaInicial.innerHTML+=
 
 
 `
-
+}
 //cor.lastChild.classList.add.('teste')
   //  console.log(login.titulo)
-}
+
 
 function gerarPerguntas(){
 
@@ -137,12 +137,12 @@ function ocultar(){
 
     const promise=axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
 
-    
+
 document.querySelector()
 }
 
 
-
+/*
 let test=
 {
 	title: "Título do quizz",
@@ -212,6 +212,6 @@ let test=
 		}
 	]
 }
-
+*/
 
 
