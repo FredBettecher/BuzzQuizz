@@ -1,14 +1,13 @@
 let parametroQuizz
 let cadastrarPergunta
-//hCriarQuiz()
-hFormularioQuiz()
 
+hCriarQuiz()
+//hFormularioQuiz()
 function hCriarQuiz(){
 
 const paginaInicial =document.querySelector('.h-login')
-
 paginaInicial.innerHTML =`        <h2> Comece pelo começo </h2>
-
+ 
 <ul>
     <li>
         <form action="javascript: hReceberValores();">
@@ -23,11 +22,8 @@ paginaInicial.innerHTML =`        <h2> Comece pelo começo </h2>
 `    
 }
 
-
-
-
 function hReceberValores(){
-
+ 
 const titulo =document.querySelector('.titulo').value
 const url =document.querySelector('.url').value
 const qtaPerguntas =document.querySelector('.qta-perguntas').value
@@ -45,7 +41,7 @@ parametroQuizz = {titulo:titulo ,
        }
 }
 
-
+ 
 
 function hFormularioQuiz(){
 
@@ -53,46 +49,47 @@ function hFormularioQuiz(){
    
 paginaInicial.innerHTML =` <h2> crie suas perguntas </h2>
 
-<form action="javascript: gerarPerguntas();"  class='aqui'>
+<form action="javascript: hNiveisQuiz();"  class='aqui'>
 
 `
-for(let i=1; i <= 1 /*parametroQuizz.qtaPerguntas*/; i++){
+
+
+for(let i=1; i <= parametroQuizz.qtaPerguntas; i++){
     paginaInicial =document.querySelector('.aqui')
     paginaInicial.innerHTML+=
     `
  <section>   
 <div class="pergunta">
 <h2> pergunta ${i}</h2>
-<img src="./imagens/edit.svg" alt="" onclick="ocultar(this)">
+<img id="${i}"src="./imagens/edit.svg" alt="" onclick="ocultar(this)">
 </div>
-<div class="h.tela3">
+<div class="secao ">
 
-<input class="txtPergunta${i}" type="text" minlength="20" placeholder="Texto da pergunta" required title="Sua pergunda deve ter no mínimo 20 letras">
-<input class="corFundo"type="text" placeholder="Cor de fundo da pergunta" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{6})$" title="começar em #, seguida de 6 caracteres hexadecimais, ou seja, números ou letras de A a F">
+<input class="texto-pergunta${i}" type="text" minlength="20" placeholder="Texto da pergunta" required title="Sua pergunda deve ter no mínimo 20 letras">
+<input class="cor-fundo"type="text" placeholder="Cor de fundo da pergunta" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{6})$" title="começar em #, seguida de 6 caracteres hexadecimais, ou seja, números ou letras de A a F">
 
 <h2 class="correta">Resposta correta</h2>
-<input class="respostaCorreta" type="text" minlength="20" maxlength="65"  placeholder="Resposta correta" required title="20 to 60 characters">
-<input class="urlCOrreta"type="url" placeholder="URL da imagem" required title=" includes URL">
+
+<input class="resposta-correta" type="text" minlength="20" maxlength="65"  placeholder="Resposta correta" required title="20 to 60 characters">
+<input class="url"type="url" placeholder="URL da imagem" required title=" includes URL">
+
 <h2 class="incorreta">Respostas incorretas</h2>
-<input class="respostaCorreta" type="text" minlength="1"   placeholder="Resposta incorreta 1" required title="campo não pode ser vazio">
-<input class="urlCOrreta"type="url" placeholder="URL da imagem 1" required title=" includes URL">
 
-<input class="respostaCorreta" type="text" minlength="1"   placeholder="Resposta incorreta 2" required title="campo não pode ser vazio">
-<input class="urlCOrreta"type="url" placeholder="URL da imagem 2" required title=" includes URL">
+<input class="resposta-incorreta" type="text" minlength="1"   placeholder="Resposta incorreta 1" required title="campo não pode ser vazio">
+<input class="url"type="url" placeholder="URL da imagem 1" required title=" includes URL">
 
-<input class="respostaCorreta" type="text" minlength="1"   placeholder="Resposta incorreta 3" required title="campo não pode ser vazio">
-<input class="urlCOrreta"type="url" placeholder="URL da imagem 3 " required title=" includes URL">
+<input class="resposta-incorreta" type="text" minlength="1"   placeholder="Resposta incorreta 2" required title="campo não pode ser vazio">
+<input class="url"type="url" placeholder="URL da imagem 2" required title=" includes URL">
+
+<input class="resposta-incorreta" type="text" minlength="1"   placeholder="Resposta incorreta 3" required title="campo não pode ser vazio">
+<input class="url"type="url" placeholder="URL da imagem 3 " required title=" includes URL">
 </div>
 </div>
 </section>
 ` 
 }
 
-paginaInicial =document.querySelectorAll('.aqui')
-
-
-
-
+const textoPergunta =document.querySelector('.texto-pergunta').value
 
 
 paginaInicial.innerHTML+=
@@ -100,22 +97,54 @@ paginaInicial.innerHTML+=
 <input class="criar-pergunta" type="submit" value="Prosseguir pra criar níveis">
 
 </form>
-
-
 `
 }
-//cor.lastChild.classList.add.('teste')
-  //  console.log(login.titulo)
 
 
-function gerarPerguntas(){
+function hNiveisQuiz(){
 
+
+	let paginaInicial =document.querySelector('.h-login')
+   
+	paginaInicial.innerHTML =` <h2> Agora, decida os níveis!</h2>
+	
+	<form action="javascript: gerarPerguntas();"  class='aqui'>
+	`	
+
+	for(let i=1; i <= parametroQuizz.qtaNiveis; i++){
+		paginaInicial =document.querySelector('.aqui')
+		paginaInicial.innerHTML+=
+		`
+	 <section>   
+	<div class="pergunta">
+	<h2> Nível ${i}</h2>
+	<img src="./imagens/edit.svg" alt="" onclick="ocultar(this)">
+	</div>
+	<div class="pergunta">
+	
+	<input class="texto-pergunta${i}" type="text" minlength="10" placeholder="titulo do nível" required title="Inclua um titulo com no minimo 10 letras">
+	<input class="porcentagemAcerto" type="number" minlength="0" maxlength="100" placeholder="% de acerto mínima" required title="informe um numero de 0 a 100">
+	<input class="urlNivel"type="url" placeholder="URL da imagem do nível" required title=" digite uma URL valida">
+	<input class="descricaoNivel" type="text" minlength="30" placeholder="Descrição do nível" required title="Inclua uma descrição com no minimo 30 letras>
+	</div>
+	</div>
+	</section>
+	` 
+	}
+
+
+	paginaInicial.innerHTML+=
+	`
+	<input class="finalizar-quizz" type="submit" value="Finalizar Quizz">
+	
+	</form>
+	`
 
 }
 
 function valor(){
 
-    console.log(parametroQuizz)
+      console.log(parametroQuizz)
 }
 /*function checkUrl(url) {
     try {
@@ -133,15 +162,11 @@ function valor(){
  }
 
 */
-function ocultar(){
+function ocultar(clicou){
+const teste = document.querySelector('.secao')
+teste.classList.toggle('ocultar')
 
-    const promise=axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes')
-
-
-document.querySelector()
 }
-
-
 /*
 let test=
 {

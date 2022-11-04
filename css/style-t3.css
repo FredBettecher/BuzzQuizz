@@ -92,7 +92,7 @@ header h1 {
     height: 46px;
     margin: 0 18px 9px 16px ;
     border: 1px solid var(--border-input);
-    border-radius: 5px;;
+    border-radius: 5px;
 }
 
 .h-tela3 ::placeholder{
@@ -105,7 +105,10 @@ header h1 {
     padding-top: 13px;
 }
 
-.criar-pergunta, .parameto-pergunta{
+
+.criar-pergunta,
+.parameto-pergunta,
+.finalizar-quizz{
     background-color: var(--background-header-buttom);
     width: 324px;
     height: 54px;
@@ -113,10 +116,12 @@ header h1 {
     font-size: 18px;   
     line-height: 21px;
     letter-spacing: 0em;
-    text-align: center;
     border-radius: 15px;
     border: none;
     margin: 20px 0 0 24px;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .h-tela3 .pergunta{
