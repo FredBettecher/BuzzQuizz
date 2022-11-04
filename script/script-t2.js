@@ -1,26 +1,27 @@
-const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
-promise.then(resposta)
-
-const arrayQuizz = [];
-function resposta(res){
-    let listaQuizz = res.data;
-    for(let i = 0; i < listaQuizz.length; i++){
-        arrayQuizz.push(listaQuizz[i].id);
-    }
-    console.log(arrayQuizz);
-}
-
-
 function SelecionarQuiz(Quizzes){
     console.log(Quizzes.id);
+    let id = Quizzes.id
+    let quizId = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
+    quizId.then(respostaSelecionarQuizz);
 }
 
-// const idDoQuizz = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/');
-// idDoQuizz.then(abrirQuiz);
+function respostaSelecionarQuizz(varUnicoQuizz){
+    console.log(varUnicoQuizz.data);
+    let quizz = varUnicoQuizz.data;
+    renderizarUnicoQuizz(quizz);
+}
 
 
-// function SelecionarQuiz(){
-//     console.log(item);
-//     let idQuizz = item.data.id;
-//     console.log(idQuizz);
-// }
+function renderizarUnicoQuizz(quizz) {
+    const unicoQuizz = document.getElementById('unicoQuizz');
+    unicoQuizz.innerHTML = '';
+    unicoQuizz.innerHTML +=
+        `
+                <div id="${quizz.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                    style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
+                    rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${quizz.image});width: 340px;
+                    height: 181px;">
+                    ${quizz.title}
+                </div>
+            `;
+}
