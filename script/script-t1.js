@@ -1,15 +1,21 @@
 let x = '';
 let y = '';
-ObterQuizzes()
+let z = '';
+let arrayQ = [1,2,1,5,6]; //pegar array da tela de criação
+let item = [];
 
-function Mudarestado(seusQuizzes, criarQuizz)
-let arrayQ = [1, 2, 3];
-function Mudarestado(seusQuizzes, criarQuizz) {
+ObterQuizzes()
+Mudarestado(x,y,z)
+
+function Mudarestado(x,y,z) {
+    
     console.log(arrayQ.length)
     if (arrayQ.length > 0) {
-        y = document.getElementById('criarQuizz').style.display = "none";
+        y = document.getElementById('y').style.display = "none";
+        
     } else {
-        x = document.getElementById('seusQuizzes').style.display = "none";
+        x = document.getElementById('x').style.display = "none";
+        z = document.getElementById('z').style.display = "none";
     }
 }
 
@@ -46,48 +52,17 @@ function renderizarTodosQuizzes(Quizzes) {
 
     for (let i = 0; i < Quizzes.length; i++) {
 
-        let item = Quizzes[i];
+        item = Quizzes[i];
         lista.innerHTML +=
             `
-                    <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
-                        style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
-                        rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
-                        height: 181px;">
-                        ${item.title} 
-                    </div>
-                `;
+                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                    style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
+                    rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
+                    height: 181px;">
+                    ${item.title} 
+                </div>
+            `;
     }
     //}
 }
 
-// function renderizarSeusQuizzes(Quizzes) {
-//     const lista = document.getElementById('SeusQuizzes');
-
-//     lista.innerHTML = '';
-
-//     for (let i = 0; i < Quizzes.length; i++) {
-
-//         let item = Quizzes[i];
-//         lista.innerHTML +=
-//             `
-//                     <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
-//                         style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
-//                         rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
-//                         height: 181px;">
-//                         ${item.title} 
-//                     </div>
-//                 `;
-//     }
-//     //}
-// }
-
-// if (globaQtde === document.getElementsByClassName('disable-carta').length) {
-//     function cartasiguais(arrayCartasViradas) {
-//         arrayCartasViradas[0].classList.add("disable-carta");
-//         arrayCartasViradas[1].classList.add("disable-carta");
-//     }
-
-// function Mudarestado(seusQuizzes)
-// {
-//     let x = document.getElementById(seusQuizzes).style.display = "none"; // ou "block"
-// }
