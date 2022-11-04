@@ -47,7 +47,7 @@ function renderizarTodosQuizzes(Quizzes) {
         let item = Quizzes[i];
         lista.innerHTML +=
             `
-                    <div id=${item.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                    <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
                         style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                         rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                         height: 181px;">
@@ -55,7 +55,10 @@ function renderizarTodosQuizzes(Quizzes) {
                     </div>
                 `;
     }
-
+console.log(item)
     //}
 
+}
+function SelecionarQuiz(){
+    console.log(this.id)
 }
