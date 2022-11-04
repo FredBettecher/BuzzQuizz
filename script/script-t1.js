@@ -1,18 +1,26 @@
+let x = '';
+let y = '';
+let z = '';
+let arrayQ = [1,2,1,5,6]; //pegar array da tela de criação
+let item = [];
 
 ObterQuizzes()
+Mudarestado(x,y,z)
 
-//function CriarQuizz() {
+function Mudarestado(x,y,z) {
+    
+    console.log(arrayQ.length)
+    if (arrayQ.length > 0) {
+        y = document.getElementById('y').style.display = "none";
+        
+    } else {
+        x = document.getElementById('x').style.display = "none";
+        z = document.getElementById('z').style.display = "none";
+    }
+}
 
-//}
-
-
-// function SelecionarQuiz() {
-
-//     let div = document.getElementById('${item.id}');
-//     div.classList.add("escondido");
-
-//     console.log('${item.id}')
-
+// function SelecionarQuiz(Quizzes) {
+//     console.log(Quizzes.id)
 // }
 
 function ObterQuizzes() {
@@ -37,23 +45,24 @@ function ObterQuizzes() {
 // foi criado pelo usuário em questão
 function renderizarTodosQuizzes(Quizzes) {
     const lista = document.getElementById('TodosQuizzes');
-    // id criado na tela 3
+    // id criado na tela 3 
     //if (item.id === " ") {
 
     lista.innerHTML = '';
 
     for (let i = 0; i < Quizzes.length; i++) {
 
-        let item = Quizzes[i];
+        item = Quizzes[i];
         lista.innerHTML +=
             `
-                    <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
-                        style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
-                        rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
-                        height: 181px;">
-                        ${item.title}
-                    </div>
-                `;
+                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                    style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
+                    rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
+                    height: 181px;">
+                    ${item.title} 
+                </div>
+            `;
     }
     //}
 }
+
