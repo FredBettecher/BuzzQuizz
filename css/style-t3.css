@@ -45,7 +45,7 @@ main .h-tela3 {
     align-items: center;
 }
 
-.h-tela3 header {
+ header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +103,7 @@ header h1 {
     padding-top: 13px;
 }
 
-.h-tela3 .criar-pergunta{
+.criar-pergunta, .parameto-pergunta{
     background-color: var(--background-header-buttom);
     width: 324px;
     height: 54px;
@@ -116,3 +116,38 @@ header h1 {
     border: none;
     margin: 20px 0 0 24px;
 }
+
+.h-tela3 .pergunta{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 375px;
+    height: 74px;
+}
+
+.h-tela3 .pergunta img{
+    width: 26px;
+    height: 23px;
+    margin-right: 25px;
+}
+
+
+.h-tela3 .pergunta h2{
+    margin: 0;
+    padding-left: 17px;
+}
+
+.h-tela3 form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.correta{
+padding-bottom: 24px;
+}
+
+.incorreta{
+    padding-bottom: 13px;
+    }
