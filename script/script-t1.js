@@ -4,10 +4,10 @@ let z = '';
 let arrayQ = [1,2,1,5,6]; //pegar array da tela de criação
 let item = [];
 
-ObterQuizzes()
-Mudarestado(x,y,z)
+obterQuizzes()
+mudarestado(x,y,z)
 
-function Mudarestado(x,y,z) {
+function mudarestado(x,y,z) {
     
     console.log(arrayQ.length)
     if (arrayQ.length > 0) {
@@ -18,12 +18,11 @@ function Mudarestado(x,y,z) {
         z = document.getElementById('z').style.display = "none";
     }
 }
+//   function selecionarQuiz(quizzes) {
+//      console.log(quizzes.id)
+//  }
 
-// function SelecionarQuiz(Quizzes) {
-//     console.log(Quizzes.id)
-// }
-
-function ObterQuizzes() {
+function obterQuizzes() {
 
     //  mandar uma requisição GET para a URL, para buscar os quizzes do servidor
     const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
@@ -33,9 +32,9 @@ function ObterQuizzes() {
 
     function respostaChegou(resposta) { // tratar sucesso
         console.log(resposta.data);  // é o array da resposta
-        Quizzes = resposta.data;
+        quizzes = resposta.data;
         //renderizar as mensagens vindas do servidor
-        renderizarTodosQuizzes(Quizzes);
+        renderizarTodosQuizzes(quizzes);
     }
 }
 
@@ -43,8 +42,8 @@ function ObterQuizzes() {
 //Na Tela 1: Lista de Quizzes, você pode comparar o id dos quizzes vindo do servidor
 //com esses ids armazenados na criação dos quizzes para verificar se um determinado quizz 
 // foi criado pelo usuário em questão
-function renderizarTodosQuizzes(Quizzes) {
-    const lista = document.getElementById('TodosQuizzes');
+function renderizarTodosQuizzes(quizzes) {
+    const lista = document.getElementById('todosQuizzes');
     // id criado na tela 3 
     //if (item.id === " ") {
 
@@ -52,10 +51,10 @@ function renderizarTodosQuizzes(Quizzes) {
 
     for (let i = 0; i < Quizzes.length; i++) {
 
-        item = Quizzes[i];
+        item = quizzes[i];
         lista.innerHTML +=
             `
-                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                <div id="${item.id}" onclick="selecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                     height: 181px;">

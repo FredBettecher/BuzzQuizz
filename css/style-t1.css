@@ -21,15 +21,12 @@
     align-items: center;
 }
 
-
-
 .icon-add {
     width: 31px;
     height: 30px;
     color: #EC362D;
     margin-left: 15px;
 }
-
 
 .criar-quiz p {
     width: 250px;
@@ -59,8 +56,6 @@
     border-radius: 50px;
 }
 
-
-
 .e-tela1 h2 {
     margin-top: 48px;
     margin-left: 194px;
@@ -77,8 +72,7 @@
     align-items: center;
 }
 
-
-.e-tela1 .Quizzes {
+.e-tela1 .quizzes {
     width: 72%;
     height: auto;
     display: flex;
