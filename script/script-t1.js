@@ -5,9 +5,9 @@ let arrayQ = [1,2,1,5,6]; //pegar array da tela de criação
 let item = [];
 
 obterQuizzes()
-mudarestado(x,y,z)
+mudarEstado(x,y,z)
 
-function mudarestado(x,y,z) {
+function mudarEstado(x,y,z) {
     
     console.log(arrayQ.length)
     if (arrayQ.length > 0) {
@@ -49,12 +49,12 @@ function renderizarTodosQuizzes(quizzes) {
 
     lista.innerHTML = '';
 
-    for (let i = 0; i < Quizzes.length; i++) {
+    for (let i = 0; i < quizzes.length; i++) {
 
         item = quizzes[i];
         lista.innerHTML +=
             `
-                <div id="${item.id}" onclick="selecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                     height: 181px;">
