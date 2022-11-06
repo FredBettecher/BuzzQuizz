@@ -1,12 +1,12 @@
-let parametroQuizz
+let parametroQuizz=[]
 //let cadastrarPergunta 
 let paginaInicial =document.querySelector('.h-login')
 let formularioPerguntas =[]
 let formularioNivel =[]
 
-//hCriarQuiz()
+hCriarQuiz()
 //hFormularioQuiz()
-function CriarQuiz(){
+function hCriarQuiz(){
 
 //const paginaInicial =document.querySelector('.h-login')
 
@@ -29,23 +29,23 @@ paginaInicial.innerHTML =`        <h2> Comece pelo começo </h2>
 function hReceberValores(){
  
 const titulo =document.querySelector('.titulo').value
-const urlQuizz =document.querySelector('.url').value
+const urlQuizz =document.querySelector('.url-quizz').value
 const qtaPerguntas =document.querySelector('.qta-perguntas').value
 const qtaNiveis =document.querySelector('.qta-niveis').value
 parametroQuizz = {titulo:titulo ,
     url:urlQuizz, 
-//qtaPerguntas:qtaPerguntas,
-  //  qtaNiveis:qtaNiveis
+qtaPerguntas:qtaPerguntas,
+    qtaNiveis:qtaNiveis
 }
 
-//    if(19 < titulo.length && qtaPerguntas > 2 && qtaNiveis >1 ){
+   if(19 < titulo.length && qtaPerguntas > 2 && qtaNiveis >1 ){
 
         console.log(titulo.length)
         console.log(parametroQuizz)
-        //hCriarQuiz()
-		CriarQuiz()
+        hCriarQuiz()
+		//CriarQuiz()
         hFormularioQuiz()
-//       }
+       }
 }
 
  
@@ -141,7 +141,7 @@ const respostaInorreta =document.querySelector('.resposta-incorreta').value
 
 function hNiveisQuiz(){
 
-	//let paginaInicial =document.querySelector('.h-login')
+	paginaInicial =document.querySelector('.h-login')
    
 	paginaInicial.innerHTML =` <h2> Agora, decida os níveis!</h2>
 	
@@ -157,14 +157,14 @@ function hNiveisQuiz(){
 	<h2> Nível ${i}</h2>
 	<img src="./imagens/edit.svg" alt="" onclick="ocultar(this)">
 	</div>
-	<div class="pergunta">
+	<div class="niveis">
 	
 	<input class="texto-pergunta${i}" type="text" minlength="10" placeholder="titulo do nível" required title="Inclua um titulo com no minimo 10 letras">
 	<input class="porcentagemAcerto" type="number" minlength="0" maxlength="100" placeholder="% de acerto mínima" required title="informe um numero de 0 a 100">
 	<input class="urlNivel"type="url" placeholder="URL da imagem do nível" required title=" digite uma URL valida">
 	<input class="descricaoNivel" type="text" minlength="30" placeholder="Descrição do nível" required title="Inclua uma descrição com no minimo 30 letras>
 	</div>
-	</div>
+	
 	</section>
 	` 
 	}
