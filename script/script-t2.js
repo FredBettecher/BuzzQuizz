@@ -23,8 +23,8 @@ function renderizarUnicoQuizz(quizz) {
         `<div class="f-gradiente" id="${quizz.id}" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57),
             rgba(0, 0, 0, 0.57)), url(${quizz.image}); color: ${quizz.color};">
             ${quizz.title}
-            <div class="f-questao-um">
-            </div>
+        </div>
+        <div class="f-questao-um">
         </div>
         `;
         renderizarQuestao(quizz);
@@ -41,12 +41,14 @@ function renderizarQuestao(questaoUm){
 
     const nivelQuestaoUm = questaoUm.levels;
     const questao = questaoUm.questions;
-    
+
     for(let i = 0; i < questao.length; i++){
         let tituloPergunta = questao[i].title;
         console.log('Titulo da pergunta: ' + tituloPergunta)
         divQuestaoUm.innerHTML += `
-            
+            ${tituloPergunta}
+            <div class="perguntas-questao">
+            </div>
         `;
         
         let respostaQuestaoUm = questao[i].answers;
