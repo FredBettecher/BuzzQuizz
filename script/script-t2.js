@@ -1,10 +1,9 @@
-function SelecionarQuiz(Quizzes){
-    console.log(Quizzes.id);
-    let id = Quizzes.id
+function SelecionarQuiz(quizzes){
+    console.log(quizzes.id);
+    let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
     quizzPromise.then(respostaSelecionarQuizz);
-    const ocultarTelaUm = document.querySelector('.e-tela1');
-    ocultarTelaUm.classList.add("ocultar");
+    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
 }
 
 function respostaSelecionarQuizz(varUnicoQuizz){

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./css/style-t2.css">
     <link rel="stylesheet" href="./css/style-t3.css">
     <link rel="icon" type="page-logo" href="./imagens/buzzquizz.png">
-    <link rel="stylesheet" href="./css/style-t1.css">
     <title>BuzzQuizz</title>
 </head>
 
@@ -23,29 +22,31 @@
     <!-- inicio tela 1 -->
     <div class="e-tela1">
 
-        <div id= y class="criar-quiz">
+        <div id=y class="criar-quiz">
             <p>"Você não criou nenhum quizz ainda :(" </p>
-            <button onclick="CriarQuizz()">Criar Quizz</button>
+            <button id="w" type="button" onclick="criarQuizz()">Criar Quizz</button>
         </div>
+        <h2 id="z" class="criarQuizz">
+            Seus Quizzes
+            <ion-icon class="icon-add" type="button" name="add-circle" onclick="criarQuizz()">
+            </ion-icon>
+        </h2>
 
-        <h2 id="z">Seus Quizzes <ion-icon class="icon-add" name="add-circle" onclick="CriarQuizz()"></ion-icon> </ion-icon></h2>
-        
-        <!-- style="display: none;" -->
-        <div id="x" class="Quizzes">
+        <div id="x" class="quizzes">
 
-            <div onclick="SelecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+            <div id=1 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
                         linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
                         url('./imagens/Rectangle\ 34.png');">
                 Titulo da Pergunta
             </div>
 
-            <div onclick="SelecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+            <div id=2 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
                             linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
                             url('./imagens/Rectangle\ 34.png');">
                 Titulo da Pergunta
             </div>
 
-            <div onclick="SelecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+            <div id=3 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
                             linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
                             url('./imagens/Rectangle\ 34.png');">
                 Titulo da Pergunta
@@ -54,7 +55,7 @@
         </div>
 
         <h2>Todos os Quizzes </h2>
-        <div class="Quizzes" id="TodosQuizzes">
+        <div class="quizzes" id="todosQuizzes">
             <div class="gradiente" style="background-image:
                         linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
                         url('./imagens/Os-Simpsons-Star-Plus.jpg');">
@@ -76,22 +77,22 @@
 
 <!-- inicio tela 3 -->
 <main class="h-tela3">
+    <!-- inicio tela 3 -->
+    <main class="h-tela3 ocultar">
 
-    <section class="h-login">
-        
-    </section>
+        <section class="h-login">
+
+        </section>
 
     </main>
     <!-- fim tela 3 -->
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./script/script.js"></script>
-    <script src="./script/script-t1.js"></script>
-
-    <script src="./script/script-t2.js"></script>
-
-    <script src="./script/script-t3.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script async src="./script/script.js"></script>
+    <script async src="./script/script-t1.js"></script>
+    <script async src="./script/script-t2.js"></script>
+    <script async src="./script/script-t3.js"></script>
+    <script async src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    
 </body>
 
 </html>
