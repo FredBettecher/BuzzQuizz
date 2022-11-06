@@ -12,7 +12,6 @@ function respostaSelecionarQuizz(varUnicoQuizz){
     renderizarUnicoQuizz(quizz);
 }
 
-
 function renderizarUnicoQuizz(quizz) {
     const unicoQuizz = document.getElementById('unicoQuizz');
     unicoQuizz.innerHTML = '';
@@ -56,7 +55,7 @@ function renderizarQuestao(questaoUm){
             console.log('Correto? ' + correto);
 
             caixaSeparadoraMaior.innerHTML += `
-                <div class="f-caixa-separadora-menor">
+                <div class="f-caixa-separadora-menor" onclick="selecionarResposta(this)">
                     <div class="f-perguntas-questao-imagem">
                         <img src="${imagemQuestaoUm}" class="f-imagens-perguntas">
                     </div>
@@ -66,7 +65,6 @@ function renderizarQuestao(questaoUm){
                 </div>
                 `;
         }
-
         
         for(let k = 0; k < nivelQuestao.length; k++){
             let tituloDoNivel = nivelQuestao[k].title;
