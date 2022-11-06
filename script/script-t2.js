@@ -1,45 +1,33 @@
-// Função usada no botão que vai renderizar o quizz clicado
-function SelecionarQuiz(Quizzes){
-    console.log(Quizzes.id);
-    let id = Quizzes.id
+function SelecionarQuiz(quizzes){
+    console.log(quizzes.id);
+    let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
     quizzPromise.then(respostaSelecionarQuizz);
-    const ocultarTelaUm = document.querySelector('.e-tela1');
-    ocultarTelaUm.classList.add("ocultar");
+    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
 }
 
-// Resposta do servidor para o clique do botão
 function respostaSelecionarQuizz(varUnicoQuizz){
     console.log(varUnicoQuizz.data);
     let quizz = varUnicoQuizz.data;
     renderizarUnicoQuizz(quizz);
 }
 
-// Função que vai renderizar o quizz clicado
+
 function renderizarUnicoQuizz(quizz) {
     const unicoQuizz = document.getElementById('unicoQuizz');
     unicoQuizz.innerHTML = '';
     unicoQuizz.innerHTML +=
         `<div class="f-gradiente" id="${quizz.id}" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57),
-            rgba(0, 0, 0, 0.57)), url(${quizz.image}); color: ${quizz.color};">
+            rgba(0, 0, 0, 0.57)), url(${quizz.image});">
             ${quizz.title}
         </div>
         <div class="f-questao-um">
         </div>
         `;
-        renderizarQuestao(quizz);
+        renderizarQuestao(questaoUm);
 }
 
-// A função abaixo vai renderizar as questões do quizz clicado
-// As variáveis ficaram como questaoUm porque eu pensei que teria que fazer uma função pra cada questão
-// porém eu percebi que elas estão todas contidas num array. Eu tentei mudar, mas começaram a aparecer
-// alguns bugs, então decidi deixar assim mesmo. Mas é só lembrar que isso pega as questões dos quizzes
-// e renderiza elas
 function renderizarQuestao(questaoUm){
-    let divQuestaoUm = document.querySelector('.f-questao-um');
-    divQuestaoUm.innerHTML = '';
-
-    const nivelQuestaoUm = questaoUm.levels;
     const questao = questaoUm.questions;
 
     for(let i = 0; i < questao.length; i++){

@@ -22,8 +22,7 @@ html {
     --font-color-subtitulo: #000000;
     --placeholder-color:#BABABA;
     --font-buttom-color:#FFF5F4;
-
-
+   
 }
 
 main .h-tela3 {
@@ -32,7 +31,6 @@ main .h-tela3 {
     display: flex;
     justify-content: center;
     font-weight: 400;
-
 
 }
 
@@ -43,6 +41,7 @@ main .h-tela3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
  header {
@@ -83,6 +82,7 @@ header h1 {
 .h-tela3 li {
     display: flex;
     flex-direction: column;  
+
 }
 
 .h-tela3 input{
@@ -93,6 +93,7 @@ header h1 {
     margin: 0 18px 9px 16px ;
     border: 1px solid var(--border-input);
     border-radius: 5px;
+
 }
 
 .h-tela3 ::placeholder{
@@ -103,6 +104,7 @@ header h1 {
     letter-spacing: 0em;
     padding-left: 14px;
     padding-top: 13px;
+
 }
 
 
@@ -131,6 +133,7 @@ header h1 {
     justify-content: space-between;
     width: 375px;
     height: 74px;
+    
 }
 
 .h-tela3 .pergunta img{
@@ -150,6 +153,7 @@ header h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -159,4 +163,14 @@ padding-bottom: 24px;
 
 .incorreta{
     padding-bottom: 13px;
+    }
+
+
+.h-tela3 .text-area {
+
+height: 177px;
+width: 341px;
+border-radius: 5px;
+
+
     }

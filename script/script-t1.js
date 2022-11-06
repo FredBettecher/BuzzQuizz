@@ -1,29 +1,37 @@
 let x = '';
 let y = '';
 let z = '';
-let arrayQ = [1,2,1,5,6]; //pegar array da tela de criação
+let arrayQ = []; //pegar array da tela de criação,
+let element1 = 0;
+let element2 = 0;
 let item = [];
 
-ObterQuizzes()
-Mudarestado(x,y,z)
+obterQuizzes();
+mudarEstado(x, y, z); // mudar da tela quando o usuário já tem quizz cadastrado 
 
-function Mudarestado(x,y,z) {
-    
+function mudarEstado(x, y, z) {
+
     console.log(arrayQ.length)
     if (arrayQ.length > 0) {
         y = document.getElementById('y').style.display = "none";
-        
+
     } else {
         x = document.getElementById('x').style.display = "none";
         z = document.getElementById('z').style.display = "none";
     }
 }
 
-// function SelecionarQuiz(Quizzes) {
-//     console.log(Quizzes.id)
-// }
+function criarQuizz() {
+    console.log(element1,element2)
+    element1 = document.getElementById("z").innerHTML // sinal de mais 
+    element2 = document.getElementById("w").innerHTML // nome
+    if (element1!=0 || element2!=0){
+        const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
+    }
+   // chamar função de criar quizz h-tela3
+}
 
-function ObterQuizzes() {
+function obterQuizzes() {
 
     //  mandar uma requisição GET para a URL, para buscar os quizzes do servidor
     const promessa = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
@@ -33,26 +41,23 @@ function ObterQuizzes() {
 
     function respostaChegou(resposta) { // tratar sucesso
         console.log(resposta.data);  // é o array da resposta
-        Quizzes = resposta.data;
+        quizzes = resposta.data;
         //renderizar as mensagens vindas do servidor
-        renderizarTodosQuizzes(Quizzes);
+        renderizarTodosQuizzes(quizzes);
     }
 }
 
 // a função renderizarLista atualiza os quizzes na tela
-//Na Tela 1: Lista de Quizzes, você pode comparar o id dos quizzes vindo do servidor
-//com esses ids armazenados na criação dos quizzes para verificar se um determinado quizz 
-// foi criado pelo usuário em questão
-function renderizarTodosQuizzes(Quizzes) {
-    const lista = document.getElementById('TodosQuizzes');
+function renderizarTodosQuizzes(quizzes) {
+    const lista = document.getElementById('todosQuizzes');
     // id criado na tela 3 
     //if (item.id === " ") {
 
     lista.innerHTML = '';
 
-    for (let i = 0; i < Quizzes.length; i++) {
+    for (let i = 0; i < quizzes.length; i++) {
 
-        item = Quizzes[i];
+        item = quizzes[i];
         lista.innerHTML +=
             `
                 <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
@@ -66,3 +71,12 @@ function renderizarTodosQuizzes(Quizzes) {
     //}
 }
 
+// integração com tela 2
+// funciona para todos os quizzes
+function SelecionarQuiz(quizzes) {
+    console.log(quizzes.id);
+    let id = quizzes.id
+    const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
+    quizzPromise.then(respostaSelecionarQuizz);
+    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
+}
