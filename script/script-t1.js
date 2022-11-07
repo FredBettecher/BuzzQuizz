@@ -1,14 +1,13 @@
 let x = '';
 let y = '';
 let z = '';
-// arrayQ  = [17801, 17654, 17653, 17652, 1473983];  // array quizz vindo do servidor 
-let lista =[];
+arrayQ  = [17801, 17654, 17653, 17652, 1473983];  // array quizz vindo do servidor 
+//let lista =[17840];
 let element1 = 0;
 let element2 = 0;
 let item =[];
 let array = [];
 let arrayQui = [];
-let arrayQuo = [];
 let newArray = [];  // novo array 
 obterQuizzes();
 mudarEstado(x, y, z); // mudar da tela quando o usuário já tem quizz cadastrado 
@@ -57,21 +56,16 @@ function renderizarSeusQuizzes(quizzes) {
         item = quizzes[i];
         console.log(item); 
         arrayQui.push(item.id);
-        newArray = arrayQui.filter(numero => lista.includes(numero))
+        newArray = arrayQui.filter(numero => arrayQ.includes(numero))
         //console.log("Quizz criado pelo usuári0: ", newArray)
-<<<<<<< HEAD
         console.log(arrayQui.filter(x => x.id === newArray)); // objeto com id 2
-=======
-
-       // console.log(arraQui.filter(x => x.id === newArray)); // objeto com id 2
->>>>>>> 06b7c47f7c9d330c6cdc313923c4eb55f93a3cae
         const lista = document.getElementById('x');
         lista.innerHTML = '';
         for (let j = 0; j < newArray.length; j++) {
 
             lista.innerHTML +=
                 `
-                <div id=${item.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                <div id=${lista.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                     height: 181px;">
