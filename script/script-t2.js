@@ -14,25 +14,30 @@ function respostaSelecionarQuizz(varUnicoQuizz){
     renderizarUnicoQuizz(quizz);
 }
 
+
 function renderizarUnicoQuizz(quizz) {
     const unicoQuizz = document.getElementById('unicoQuizz');
     unicoQuizz.innerHTML = '';
     unicoQuizz.innerHTML +=
-        `<div class="titulo-quizz f-gradiente" id="${quizz.id}" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57),
+        `<div class="f-gradiente" id="${quizz.id}" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.57),
             rgba(0, 0, 0, 0.57)), url(${quizz.image});">
             ${quizz.title}
-        </div>
-        <div class="f-questao-um">
+            <div class="f-questao-um">
+            </div>
         </div>
         `;
-        renderizarQuestao(quizz);
+        renderizarQuestao(questaoUm);
 }
 
 function renderizarQuestao(questaoUm){
     const questao = questaoUm.questions;
-    const nivelQuestao = questaoUm.levels;
-    const divQuestaoUm = document.querySelector('.f-questao-um');
+    console.log(questao);
     for(let i = 0; i < questao.length; i++){
+<<<<<<< HEAD
+        const titulo = questao[i].titulo;
+        console.log(titulo);
+        let que
+=======
         let tituloPergunta = questao[i].title;
         console.log('Titulo da pergunta: ' + tituloPergunta);
         let cor = questao[i].color;
@@ -78,5 +83,6 @@ function renderizarQuestao(questaoUm){
             let pontosDoNivel = nivelQuestao[k].minValue;
             console.log(`Pontos do nivel: ${pontosDoNivel}`);
         }
+>>>>>>> 5d49e6daaaf1390f3d498709bba627e7543b1db6
     }
 }
