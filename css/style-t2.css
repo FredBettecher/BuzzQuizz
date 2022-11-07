@@ -71,3 +71,11 @@
 .f-opacidade {
     opacity: 0.5;
 }
+
+.f-correto {
+    color: #009C22;
+}
+
+.f-errado {
+    color: #FF4B4B;
+}

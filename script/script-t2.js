@@ -1,9 +1,11 @@
-function SelecionarQuiz(quizzes){
+let correto;
+
+function selecionarQuiz(quizzes){
     console.log(quizzes.id);
     let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
     quizzPromise.then(respostaSelecionarQuizz);
-    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
+    document.querySelector('.e-tela1').style.display = "none";
 }
 
 function respostaSelecionarQuizz(varUnicoQuizz){
@@ -24,12 +26,13 @@ function renderizarUnicoQuizz(quizz) {
             </div>
         </div>
         `;
-        renderizarQuestao(questaoUm);
+        renderizarQuestao(quizz);
 }
 
 function renderizarQuestao(questaoUm){
     const questao = questaoUm.questions;
     console.log(questao);
+    const divQuestaoUm = document.querySelector('.f-questao-um')
     for(let i = 0; i < questao.length; i++){
         let tituloPergunta = questao[i].title;
         console.log('Titulo da pergunta: ' + tituloPergunta);
@@ -51,15 +54,15 @@ function renderizarQuestao(questaoUm){
             console.log(`Resposta ${j+1}: ${textoQuestao}`);
             let imagemQuestaoUm = respostaQuestaoUm[j].image;
             console.log('Imagem: ' + imagemQuestaoUm);
-            let correto = respostaQuestaoUm[j].isCorrectAnswer;
+            correto = respostaQuestaoUm[j].isCorrectAnswer;
             console.log('Correto? ' + correto);
 
             caixaSeparadoraMaior.innerHTML += `
-                <div class="f-caixa-separadora-menor" onclick="selecionarResposta(this)">
+                <div class="f-caixa-separadora-menor" onclick="clicarNaResposta(this)">
                     <div class="f-perguntas-questao-imagem">
                         <img src="${imagemQuestaoUm}" class="f-imagens-perguntas">
                     </div>
-                    <div class="f-perguntas-questao-texto">
+                    <div class="f-perguntas-questao-texto" id="resp-${j}">
                         ${textoQuestao}
                     </div>
                 </div>

@@ -30,8 +30,9 @@ function criarQuizz() {
     element2 = document.getElementById("w").innerHTML // nome
     if (element1 != 0 || element2 != 0) {
         const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
-        CriarQuiz()// chamar função de criar quizz h-tela3 3.1
+        //CriarQuiz()// chamar função de criar quizz h-tela3 3.1
     }
+    hCriarQuizz() // chamar função de criar quizz h-tela3
 }
 
 function obterQuizzes() {
@@ -58,7 +59,12 @@ function renderizarSeusQuizzes(quizzes) {
         arrayQui.push(item.id);
         newArray = arrayQui.filter(numero => lista.includes(numero))
         //console.log("Quizz criado pelo usuári0: ", newArray)
+<<<<<<< HEAD
         console.log(arrayQui.filter(x => x.id === newArray)); // objeto com id 2
+=======
+
+       // console.log(arraQui.filter(x => x.id === newArray)); // objeto com id 2
+>>>>>>> 06b7c47f7c9d330c6cdc313923c4eb55f93a3cae
         const lista = document.getElementById('x');
         lista.innerHTML = '';
         for (let j = 0; j < newArray.length; j++) {
@@ -88,7 +94,7 @@ function renderizarTodosQuizzes(quizzes) {
         item = quizzes[i];
         lista.innerHTML +=
             `
-                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                <div id="${item.id}" onclick="selecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                     height: 181px;">
@@ -101,7 +107,7 @@ function renderizarTodosQuizzes(quizzes) {
 
 // integração com tela 2
 // funciona para todos os quizzes
-function SelecionarQuiz(quizzes) {
+function selecionarQuiz(quizzes) {
     console.log(quizzes.id);
     let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
