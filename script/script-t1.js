@@ -73,10 +73,10 @@ function renderizarTodosQuizzes(quizzes) {
 
 // integração com tela 2
 // funciona para todos os quizzes
-// function selecionarQuiz(quizzes) {
-//     console.log(quizzes.id);
-//     let id = quizzes.id
-//     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
-//     quizzPromise.then(respostaSelecionarQuizz);
-//     const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
-// }
+function selecionarQuiz(quizzes) {
+    console.log(quizzes.id);
+    let id = quizzes.id
+    const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
+    quizzPromise.then(respostaSelecionarQuizz);
+    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
+}

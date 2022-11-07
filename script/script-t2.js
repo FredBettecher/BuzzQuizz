@@ -61,7 +61,7 @@ function renderizarQuestao(questaoUm){
                     <div class="f-perguntas-questao-imagem">
                         <img src="${imagemQuestaoUm}" class="f-imagens-perguntas">
                     </div>
-                    <div class="f-perguntas-questao-texto">
+                    <div class="f-perguntas-questao-texto" id="resp-${j}">
                         ${textoQuestao}
                     </div>
                 </div>
@@ -80,4 +80,3 @@ function renderizarQuestao(questaoUm){
         }
     }
 }
-
