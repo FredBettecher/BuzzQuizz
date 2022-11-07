@@ -1,19 +1,11 @@
 let parametroQuizz
-//let cadastrarPergunta 
 let paginaInicial = document.querySelector('.h-login')
 let formularioPerguntas = []
 let formularioNivel = []
 let envioQuizz
-//let image
-//let title
-let dadosQuizz
-//let teste
-//hNiveisQuiz()
-//CriarQuiz()
-//hFormularioQuiz()
-function hCriarQuizz() {
+let meuPost =[]
 
-	//const paginaInicial =document.querySelector('.h-login')
+function hCriarQuizz() {
 
 	paginaInicial.innerHTML = `        <h2> Comece pelo começo </h2>
  
@@ -49,13 +41,10 @@ function hRetornoInputsCriacao() {
 
 function hFormularioQuiz() {
 
-	//  let paginaInicial =document.querySelector('.h-login')
-
 	paginaInicial.innerHTML = ` <h2> crie suas perguntas </h2>
 
 <form class='aqui' action="javascript: hRetornoInputsFormulario();">
 `
-
 
 	for (let i = 1; i <= parametroQuizz.qtaPerguntas; i++) {
 		paginaInicial = document.querySelector('.aqui')
@@ -99,7 +88,6 @@ function hFormularioQuiz() {
 </form>
 `
 }
-
 
 function hNiveisQuiz() {
 	paginaInicial = document.querySelector('.h-login')
@@ -206,9 +194,6 @@ Seus Quizzes
 `
 }
 
-
-
-
 function hRetornaInputsNiveis() {
 
 	for (let i = 1; i <= parametroQuizz.qtaNiveis; i++) {
@@ -217,8 +202,6 @@ function hRetornaInputsNiveis() {
 		const porcentagemNivel = document.querySelector(`.porcentagem-acerto${i}`).value
 		const urlNivel = document.querySelector(`.url-nivel${i}`).value
 		const descricaoNivel = document.querySelector(`.descricao-nivel${i}`).value
-
-//		if( tituloNivel !==undefined && porcentagemNivel !==undefined && urlNivel !==undefined && descricaoNivel !==undefined ){
 
 		formularioNivel.push(
 			{
@@ -229,15 +212,10 @@ function hRetornaInputsNiveis() {
 			}
 		)
 		}
-//	}
-
-
 
 	postQuizz()
 
 }
-
-
 
 function erro() {
 	alert('falhouuu')
@@ -258,8 +236,6 @@ function hRetornoInputsFormulario() {
 		let url2 = document.querySelector(`.resposta${i}url2`).value
 		let respostaIncorreta3 = document.querySelector(`.resposta${i}-incorreta3`).value
 		let url3 = document.querySelector(`.resposta${i}url3`).value
-
-//		if( title !==undefined && color !==undefined && respostaCorreta !==undefined && url !==undefined && respostaIncorreta !==undefined && respostaIncorreta2 !==undefined && respostaIncorreta3 !==undefined &&url1 !==undefined && url2 !==undefined && url3){
 
 		formularioPerguntas.push(
 			{
@@ -295,10 +271,7 @@ function hRetornoInputsFormulario() {
 
 	}
 	
-//		}
-
 	hNiveisQuiz()
-
 
 }
 
@@ -314,12 +287,6 @@ function ocultar(clicou) {
 
 function postQuizz() {
 
-	//dadosQuizz = {
-	//	title: title,
-	//	image: image
-	//}
-
-
 	envioQuizz = {
 		title: parametroQuizz.title,
 		image: parametroQuizz.image,
@@ -332,21 +299,25 @@ function postQuizz() {
 
 }
 
-function salvarNavegador(){
+function salvarNavegador(resp){
 	
-	const dadosSerializado = JSON.stringify(envioQuizz); // Array convertida pra uma string
-	localStorage.setItem("lista", dadosSerializado); // Armazenando a string na chave "lista" do Local Storage
-
+	meuPost.push(resp.data.id)
 	
-	const listaSerializada = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
-	const lista = JSON.parse(listaSerializada); // Transformando a string de volta na array original
-
-
-
-
+	const postSerializado = JSON.stringify(meuPost); // Array convertida pra uma string
+	localStorage.setItem("lista", postSerializado); // Armazenando a string na chave "lista" do Local Storage
 	
-	console.log(dadosSerializado)
-	console.log(dadosQuizz)
+	const listaPostSerializada = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
+	const lista = JSON.parse(listaPostSerializada); // Transformando a string de volta na array original
+
+	envioQuizz= []
+
+	console.log(listaPostSerializada[0]) //string
+	console.log(lista)	//objeto
+	console.log(postSerializado)//lista
+	console.log(meuPost)
+	console.log(resp.data.id)
+	
+
 
 hSucessoQuizz()
 }
