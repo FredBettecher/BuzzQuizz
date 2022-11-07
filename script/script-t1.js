@@ -22,13 +22,13 @@ function mudarEstado(x, y, z) {
 }
 
 function criarQuizz() {
-    //   console.log(element1,element2)
+    hCriarQuizz() // chamar função de criar quizz h-tela3
+ //   console.log(element1,element2)
     element1 = document.getElementById("z").innerHTML // sinal de mais 
     element2 = document.getElementById("w").innerHTML // nome
     if (element1!=0 || element2!=0){
         const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
     }
-    hCriarQuizz() // chamar função de criar quizz h-tela3
 }
 
 function obterQuizzes() {

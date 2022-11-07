@@ -4,9 +4,8 @@ let paginaInicial = document.querySelector('.h-login')
 let formularioPerguntas = []
 let formularioNivel = []
 let envioQuizz
-let image
-let title
-
+//let image
+//let title
 let dadosQuizz
 //let teste
 //hNiveisQuiz()
@@ -34,13 +33,13 @@ function hCriarQuizz() {
 
 function hRetornoInputsCriacao() {
 
-	title = document.querySelector('.titulo').value
-	image = document.querySelector('.url-quizz').value
+	const title = document.querySelector('.titulo').value
+	const image = document.querySelector('.url-quizz').value
 	const qtaPerguntas = document.querySelector('.qta-perguntas').value
 	const qtaNiveis = document.querySelector('.qta-niveis').value
 	parametroQuizz = {
-		//	title: title,
-		//	image: image,
+			title: title,
+			image: image,
 		qtaPerguntas: qtaPerguntas,
 		qtaNiveis: qtaNiveis
 	}
@@ -147,19 +146,15 @@ function hSucessoQuizz() {
 
 	<div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
-                    rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
+                    rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${parametroQuizz.image});width: 340px;
                     height: 181px;">
-                    ${item.title} 
+                    ${parametroQuizz.title} 
                 </div>
 
 				<button class="h-sucesso-quizz"onclick="#"> Acessar Quizz </button>
 				<p onclick="retornarMenu()" > Voltar pra home </p>
 `
 }
-
-
-
-
 
 function retornarMenu(){
 
@@ -314,20 +309,20 @@ function ocultar(clicou) {
 
 	teste2.classList.toggle('ocultar')
 
-
+ 
 }
 
 function postQuizz() {
 
-	dadosQuizz = {
-		title: title,
-		image: image
-	}
+	//dadosQuizz = {
+	//	title: title,
+	//	image: image
+	//}
 
 
 	envioQuizz = {
-		title: dadosQuizz.title,
-		image: dadosQuizz.image,
+		title: parametroQuizz.title,
+		image: parametroQuizz.image,
 		questions: formularioPerguntas,
 		levels: formularioNivel
 	}
@@ -335,16 +330,23 @@ function postQuizz() {
 	const promise = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', envioQuizz)
 	promise.then(salvarNavegador)
 
-	console.log(dadosQuizz)
 }
 
 function salvarNavegador(){
+	
+	const dadosSerializado = JSON.stringify(envioQuizz); // Array convertida pra uma string
+	localStorage.setItem("lista", dadosSerializado); // Armazenando a string na chave "lista" do Local Storage
 
-const dadosSerializado = JSON.stringify(envioQuizz); // Array convertida pra uma string
+	
+	const listaSerializada = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
+	const lista = JSON.parse(listaSerializada); // Transformando a string de volta na array original
 
-localStorage.setItem("lista", dadosSerializado); // Armazenando a string na chave "lista" do Local Storage
 
-console.log(dadosSerializado)
+
+
+	
+	console.log(dadosSerializado)
+	console.log(dadosQuizz)
 
 hSucessoQuizz()
 }
