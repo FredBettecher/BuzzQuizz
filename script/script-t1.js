@@ -24,14 +24,14 @@ function mudarEstado(x, y, z) {
 }
 
 function criarQuizz() {
-    hCriarQuizz() // chamar função de criar quizz h-tela3
- //   console.log(element1,element2)
+    //   console.log(element1,element2)
     element1 = document.getElementById("z").innerHTML // sinal de mais 
     element2 = document.getElementById("w").innerHTML // nome
     if (element1 != 0 || element2 != 0) {
         const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
-        CriarQuiz()// chamar função de criar quizz h-tela3 3.1
+        //CriarQuiz()// chamar função de criar quizz h-tela3 3.1
     }
+    hCriarQuizz() // chamar função de criar quizz h-tela3
 }
 
 function obterQuizzes() {
@@ -62,7 +62,7 @@ function renderizarSeusQuizzes(quizzes) {
         const newArray = arrayQui.filter(numero => arrayQ.includes(numero))
         //console.log("Quizz criado pelo usuári0: ", newArray)
 
-        console.log(arraQui.filter(x => x.id === newArray)); // objeto com id 2
+       // console.log(arraQui.filter(x => x.id === newArray)); // objeto com id 2
         const lista = document.getElementById('x');
         lista.innerHTML = '';
         for (let j = 0; j < newArray.length; j++) {

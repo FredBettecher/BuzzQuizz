@@ -4,7 +4,7 @@ let formularioPerguntas = []
 let formularioNivel = []
 let envioQuizz
 let meuPost =[]
-
+let lista
 function hCriarQuizz() {
 
 	paginaInicial.innerHTML = `        <h2> Comece pelo começo </h2>
@@ -130,9 +130,13 @@ function hNiveisQuiz() {
 function hSucessoQuizz() {
 	paginaInicial = document.querySelector('.h-login')
 
-	paginaInicial.innerHTML = ` <h2> Seu quizz está pronto!</h2>
+	paginaInicial.innerHTML = ` <h2> Seu quizz está pronto!</h2>`
 
-	<div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+
+	const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + lista);
+quizzPromise.then(respostaSelecionarQuizz);
+
+/*	<div id="${lista}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${parametroQuizz.image});width: 340px;
                     height: 181px;">
@@ -141,8 +145,10 @@ function hSucessoQuizz() {
 
 				<button class="h-sucesso-quizz"onclick="#"> Acessar Quizz </button>
 				<p onclick="retornarMenu()" > Voltar pra home </p>
-`
+*/
 }
+
+
 
 function retornarMenu(){
 
@@ -214,7 +220,6 @@ function hRetornaInputsNiveis() {
 		}
 
 	postQuizz()
-
 }
 
 function erro() {
@@ -307,7 +312,7 @@ function salvarNavegador(resp){
 	localStorage.setItem("lista", postSerializado); // Armazenando a string na chave "lista" do Local Storage
 	
 	const listaPostSerializada = localStorage.getItem("lista"); // Pegando de volta a string armazenada na chave "lista"
-	const lista = JSON.parse(listaPostSerializada); // Transformando a string de volta na array original
+	lista = JSON.parse(listaPostSerializada); // Transformando a string de volta na array original
 
 	envioQuizz= []
 
