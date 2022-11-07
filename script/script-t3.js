@@ -3,14 +3,12 @@ let parametroQuizz
 let paginaInicial = document.querySelector('.h-login')
 let formularioPerguntas = []
 let formularioNivel = []
-//let envioQuizz = {dadosQuizz,
-//	formularioPerguntas,formularioNivel}
-
+let envioQuizz
 let image
 let title
 
 let dadosQuizz
-let teste
+//let teste
 //hNiveisQuiz()
 //CriarQuiz()
 //hFormularioQuiz()
@@ -155,7 +153,7 @@ function hSucessoQuizz() {
                 </div>
 
 				<button class="h-sucesso-quizz"onclick="#"> Acessar Quizz </button>
-				<p onclick="#" > Voltar pra home </p>
+				<p onclick="obterQuizzes()" > Voltar pra home </p>
 `
 }
 
@@ -169,6 +167,7 @@ function hRetornaInputsNiveis() {
 		const urlNivel = document.querySelector(`.url-nivel${i}`).value
 		const descricaoNivel = document.querySelector(`.descricao-nivel${i}`).value
 
+		if( tituloNivel !==undefined && porcentagemNivel !==undefined && urlNivel !==undefined && descricaoNivel !==undefined ){
 
 		formularioNivel.push(
 			{
@@ -178,6 +177,7 @@ function hRetornaInputsNiveis() {
 				minValue: porcentagemNivel
 			}
 		)
+		}
 	}
 
 
@@ -201,13 +201,14 @@ function hRetornoInputsFormulario() {
 		let color = document.querySelector(`.cor-fundo${i}`).value
 		let respostaCorreta = document.querySelector(`.resposta${i}-correta`).value
 		let url = document.querySelector(`.resposta${i}url`).value
-		let respostaInorreta = document.querySelector(`.resposta${i}-incorreta`).value
+		let respostaIncorreta = document.querySelector(`.resposta${i}-incorreta`).value
 		let url1 = document.querySelector(`.resposta${i}url1`).value
 		let respostaIncorreta2 = document.querySelector(`.resposta${i}-incorreta2`).value
 		let url2 = document.querySelector(`.resposta${i}url2`).value
 		let respostaIncorreta3 = document.querySelector(`.resposta${i}-incorreta3`).value
 		let url3 = document.querySelector(`.resposta${i}url3`).value
 
+		if( title !==undefined && color !==undefined && respostaCorreta !==undefined && url !==undefined && respostaIncorreta !==undefined && respostaIncorreta2 !==undefined && respostaIncorreta3 !==undefined &&url1 !==undefined && url2 !==undefined && url3){
 
 		formularioPerguntas.push(
 			{
@@ -221,7 +222,7 @@ function hRetornoInputsFormulario() {
 					}
 					,
 					{
-						text: respostaInorreta,
+						text: respostaIncorreta,
 						image: url1,
 						isCorrectAnswer: false
 					},
@@ -241,6 +242,8 @@ function hRetornoInputsFormulario() {
 			}
 		)
 
+	}
+	
 	}
 
 	hNiveisQuiz()
@@ -266,14 +269,15 @@ function postQuizz() {
 	}
 
 
-	teste = {
+	envioQuizz = {
 		title: dadosQuizz.title,
 		image: dadosQuizz.image,
 		questions: formularioPerguntas,
 		levels: formularioNivel
 	}
 
-	const promise = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes',/*envioQuizz*/ teste)
+	const promise = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', envioQuizz)
 	promise.then(hSucessoQuizz)
-	console.log(typeof (image))
+
+	console.log(dadosQuizz)
 }
