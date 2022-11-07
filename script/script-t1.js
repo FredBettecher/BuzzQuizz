@@ -98,7 +98,7 @@ function renderizarTodosQuizzes(quizzes) {
         item = quizzes[i];
         lista.innerHTML +=
             `
-                <div id="${item.id}" onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
+                <div id="${item.id}" onclick="selecionarQuiz(this)" class="gradiente tamanho-imagem" 
                     style="background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%,
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${item.image});width: 340px;
                     height: 181px;">
@@ -111,7 +111,7 @@ function renderizarTodosQuizzes(quizzes) {
 
 // integração com tela 2
 // funciona para todos os quizzes
-function SelecionarQuiz(quizzes) {
+function selecionarQuiz(quizzes) {
     console.log(quizzes.id);
     let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
