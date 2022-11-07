@@ -1,9 +1,11 @@
-function SelecionarQuiz(quizzes){
+let correto;
+
+function selecionarQuiz(quizzes){
     console.log(quizzes.id);
     let id = quizzes.id
     const quizzPromise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
     quizzPromise.then(respostaSelecionarQuizz);
-    const ocultarTelaUm = document.querySelector('.e-tela1').style.display = "none";
+    document.querySelector('.e-tela1').style.display = "none";
 }
 
 function respostaSelecionarQuizz(varUnicoQuizz){
@@ -51,11 +53,11 @@ function renderizarQuestao(questaoUm){
             console.log(`Resposta ${j+1}: ${textoQuestao}`);
             let imagemQuestaoUm = respostaQuestaoUm[j].image;
             console.log('Imagem: ' + imagemQuestaoUm);
-            let correto = respostaQuestaoUm[j].isCorrectAnswer;
+            correto = respostaQuestaoUm[j].isCorrectAnswer;
             console.log('Correto? ' + correto);
 
             caixaSeparadoraMaior.innerHTML += `
-                <div class="f-caixa-separadora-menor" onclick="selecionarResposta(this)">
+                <div class="f-caixa-separadora-menor" onclick="clicarNaResposta(this)">
                     <div class="f-perguntas-questao-imagem">
                         <img src="${imagemQuestaoUm}" class="f-imagens-perguntas">
                     </div>
@@ -78,3 +80,4 @@ function renderizarQuestao(questaoUm){
         }
     }
 }
+
