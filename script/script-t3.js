@@ -4,7 +4,7 @@ let formularioPerguntas = []
 let formularioNivel = []
 let envioQuizz
 let meuPost =[]
-let lista
+let lista =[]
 function hCriarQuizz() {
 
 	paginaInicial.innerHTML = `        <h2> Comece pelo começo </h2>
@@ -141,11 +141,11 @@ quizzPromise.then(respostaSelecionarQuizz);
                     rgba(0, 0, 0, 0.5) 64.58%, #000000 100%), url(${parametroQuizz.image});width: 340px;
                     height: 181px;">
                     ${parametroQuizz.title} 
-                </div>
-
+                </div>*/
+				paginaInicial.innerHTML += `
 				<button class="h-sucesso-quizz"onclick="#"> Acessar Quizz </button>
 				<p onclick="retornarMenu()" > Voltar pra home </p>
-*/
+`
 }
 
 
