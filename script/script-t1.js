@@ -1,10 +1,11 @@
 let x = '';
 let y = '';
 let z = '';
-let arrayQ = [17655, 17654, 17653, 17652, 1473983];  // array quizz vindo do servidor 
+// arrayQ  = [17801, 17654, 17653, 17652, 1473983];  // array quizz vindo do servidor 
+let lista =[];
 let element1 = 0;
 let element2 = 0;
-let item = [];
+let item =[];
 let array = [];
 let arrayQui = [];
 let arrayQuo = [];
@@ -51,27 +52,17 @@ function obterQuizzes() {
 }
 
 function renderizarSeusQuizzes(quizzes) {
-    
-    //if (item.id === " ") {   // mostrar quizz criados pelo o usuario
-
     for (let i = 0; i < quizzes.length; i++) {
         item = quizzes[i];
         console.log(item); 
         arrayQui.push(item.id);
-        const newArray = arrayQui.filter(numero => arrayQ.includes(numero))
+        newArray = arrayQui.filter(numero => lista.includes(numero))
         //console.log("Quizz criado pelo usuári0: ", newArray)
-
-        console.log(arraQui.filter(x => x.id === newArray)); // objeto com id 2
+        console.log(arrayQui.filter(x => x.id === newArray)); // objeto com id 2
         const lista = document.getElementById('x');
         lista.innerHTML = '';
         for (let j = 0; j < newArray.length; j++) {
 
-            // var arr = [
-            //     {'id': 1, 'nome': 'Matheus'},
-            //     {'id': 2, 'nome': 'Pedro'},
-            //     {'id': 3, 'nome': 'João'}
-            //   ];
-            
             lista.innerHTML +=
                 `
                 <div id=${item.id} onclick="SelecionarQuiz(this)" class="gradiente tamanho-imagem" 
