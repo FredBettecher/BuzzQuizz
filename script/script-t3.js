@@ -153,9 +153,65 @@ function hSucessoQuizz() {
                 </div>
 
 				<button class="h-sucesso-quizz"onclick="#"> Acessar Quizz </button>
-				<p onclick="obterQuizzes()" > Voltar pra home </p>
+				<p onclick="retornarMenu()" > Voltar pra home </p>
 `
 }
+
+
+
+
+
+function retornarMenu(){
+
+	paginaInicial = document.querySelector('.h-login')
+
+	paginaInicial.innerHTML =`
+
+<div id=y class="criar-quiz">
+<p>"Você não criou nenhum quizz ainda :(" </p>
+<button id="w" type="button" onclick="criarQuizz()">Criar Quizz</button>
+</div>
+<h2 id="z" class="criarQuizz">
+Seus Quizzes
+<ion-icon class="icon-add" type="button" name="add-circle" onclick="criarQuizz()">
+</ion-icon>
+</h2>
+
+<div id="x" class="quizzes">
+
+<div id=1 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+			linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+			url('./imagens/Rectangle\ 34.png');">
+	Titulo da Pergunta
+</div>
+
+<div id=2 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+				linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+				url('./imagens/Rectangle\ 34.png');">
+	Titulo da Pergunta
+</div>
+
+<div id=3 onclick="selecionarQuiz()" class="gradiente tamanho-imagem" style="background-image:
+				linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+				url('./imagens/Rectangle\ 34.png');">
+	Titulo da Pergunta
+</div>
+
+</div>
+
+<h2>Todos os Quizzes </h2>
+<div class="quizzes" id="todosQuizzes">
+<div class="gradiente" style="background-image:
+			linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%),
+			url('./imagens/Os-Simpsons-Star-Plus.jpg');">
+</div>
+</div>
+
+</div>
+`
+}
+
+
 
 
 function hRetornaInputsNiveis() {
@@ -167,7 +223,7 @@ function hRetornaInputsNiveis() {
 		const urlNivel = document.querySelector(`.url-nivel${i}`).value
 		const descricaoNivel = document.querySelector(`.descricao-nivel${i}`).value
 
-		if( tituloNivel !==undefined && porcentagemNivel !==undefined && urlNivel !==undefined && descricaoNivel !==undefined ){
+//		if( tituloNivel !==undefined && porcentagemNivel !==undefined && urlNivel !==undefined && descricaoNivel !==undefined ){
 
 		formularioNivel.push(
 			{
@@ -178,7 +234,7 @@ function hRetornaInputsNiveis() {
 			}
 		)
 		}
-	}
+//	}
 
 
 
@@ -208,7 +264,7 @@ function hRetornoInputsFormulario() {
 		let respostaIncorreta3 = document.querySelector(`.resposta${i}-incorreta3`).value
 		let url3 = document.querySelector(`.resposta${i}url3`).value
 
-		if( title !==undefined && color !==undefined && respostaCorreta !==undefined && url !==undefined && respostaIncorreta !==undefined && respostaIncorreta2 !==undefined && respostaIncorreta3 !==undefined &&url1 !==undefined && url2 !==undefined && url3){
+//		if( title !==undefined && color !==undefined && respostaCorreta !==undefined && url !==undefined && respostaIncorreta !==undefined && respostaIncorreta2 !==undefined && respostaIncorreta3 !==undefined &&url1 !==undefined && url2 !==undefined && url3){
 
 		formularioPerguntas.push(
 			{
@@ -244,7 +300,7 @@ function hRetornoInputsFormulario() {
 
 	}
 	
-	}
+//		}
 
 	hNiveisQuiz()
 
@@ -277,7 +333,18 @@ function postQuizz() {
 	}
 
 	const promise = axios.post('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes', envioQuizz)
-	promise.then(hSucessoQuizz)
+	promise.then(salvarNavegador)
 
 	console.log(dadosQuizz)
+}
+
+function salvarNavegador(){
+
+const dadosSerializado = JSON.stringify(envioQuizz); // Array convertida pra uma string
+
+localStorage.setItem("lista", dadosSerializado); // Armazenando a string na chave "lista" do Local Storage
+
+console.log(dadosSerializado)
+
+hSucessoQuizz()
 }
