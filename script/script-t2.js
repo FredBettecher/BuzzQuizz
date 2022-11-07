@@ -26,18 +26,14 @@ function renderizarUnicoQuizz(quizz) {
             </div>
         </div>
         `;
-        renderizarQuestao(questaoUm);
+        renderizarQuestao(quizz);
 }
 
 function renderizarQuestao(questaoUm){
     const questao = questaoUm.questions;
     console.log(questao);
+    const divQuestaoUm = document.querySelector('.f-questao-um')
     for(let i = 0; i < questao.length; i++){
-<<<<<<< HEAD
-        const titulo = questao[i].titulo;
-        console.log(titulo);
-        let que
-=======
         let tituloPergunta = questao[i].title;
         console.log('Titulo da pergunta: ' + tituloPergunta);
         let cor = questao[i].color;
@@ -83,6 +79,5 @@ function renderizarQuestao(questaoUm){
             let pontosDoNivel = nivelQuestao[k].minValue;
             console.log(`Pontos do nivel: ${pontosDoNivel}`);
         }
->>>>>>> 5d49e6daaaf1390f3d498709bba627e7543b1db6
     }
 }
