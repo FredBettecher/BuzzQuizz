@@ -39,12 +39,12 @@ function renderizarQuestao(questaoUm){
                 <div class="f-titulo-pergunta" style="background-color: ${cor}">
                 ${tituloPergunta}
                 </div>
-                <div class="f-caixa-separadora-maior">
+                <div class="f-caixa-separadora-maior resposta-${i}">
                 </div>
 
         `;
         
-        const caixaSeparadoraMaior = document.querySelector('.f-caixa-separadora-maior')
+        let caixaSeparadoraMaior = document.querySelector(`.resposta-${i}`);
         let respostaQuestaoUm = questao[i].answers;
         for(let j = 0; j < respostaQuestaoUm.length; j++){
             let textoQuestao = respostaQuestaoUm[j].text;
