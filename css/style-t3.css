@@ -21,7 +21,9 @@ html {
     --font-color-header: #FFFFFF;
     --font-color-subtitulo: #000000;
     --placeholder-color:#BABABA;
-    --font-buttom-color:#FFF5F4;
+    --font-button-color:#FFF5F4;
+    --font-return-home:#818181;
+
    
 }
 
@@ -110,21 +112,35 @@ header h1 {
 
 .criar-pergunta,
 .parameto-pergunta,
-.finalizar-quizz{
+.finalizar-quizz,
+.h-sucesso-quizz{
+    display: flex;
     background-color: var(--background-header-buttom);
     width: 324px;
     height: 54px;
-    color: var(--font-buttom-color);
+    color: var(--font-button-color);
     font-size: 18px;   
     line-height: 21px;
     letter-spacing: 0em;
     border-radius: 15px;
     border: none;
-    margin: 20px 0 0 24px;
+    margin: 20px 0 9px 24px;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
 }
+
+p{
+color: var(--font-return-home);
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: center;
+
+
+}
+
 
 .h-tela3 .pergunta{
     display: flex;
